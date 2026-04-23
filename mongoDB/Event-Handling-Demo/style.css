@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+h1 {
+    color: #333;
+}
+
+button,
+input,
+select {
+    display: block;
+    width: 85%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #ff7b54;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background: #ff5722;
+}
+
+input:focus {
+    outline: 2px solid #ff7b54;
+}
+
+#destinationCard {
+    margin: 20px;
+    padding: 25px;
+    background: #eee;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#output {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
