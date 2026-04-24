@@ -1,11 +1,23 @@
 const fs = require('fs');
 
-const content = "Hello, this file was created using Node.js!";
+const fileName = 'message.txt';
+const content = "Hello Node.js!";
 
-fs.writeFile('message.txt', content, (err) => {
+fs.open(fileName, 'wx', (err, fd) => {
   if (err) {
-    console.error("Error writing file:", err);
+    if (err.code === 'EEXIST') {
+      console.log("File already exists. Skipping creation.");
+    } else {
+      console.error(err);
+    }
     return;
   }
-  console.log("File has been created successfully!");
+
+  fs.writeFile(fd, content, (err) => {
+    if (err) {
+      console.error("Write error:", err);
+    } else {
+      console.log("File created safely without overwriting.");
+    }
+  });
 });
